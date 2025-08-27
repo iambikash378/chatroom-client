@@ -16,9 +16,10 @@ export class SocketClient implements OnModuleInit{
     
 
     private registerClientEvents(){
-        this.socketClient.emit('newMessage', {msg:'Hey There'});
         this.socketClient.on('connect', () => {
             console.log('Connected to Gateway');
+            this.socketClient.emit('newMessage', {msg:'Hey There'});
+
         });
 
 
